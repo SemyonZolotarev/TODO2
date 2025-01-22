@@ -6,10 +6,12 @@ import java.time.LocalDate;
 
 @Data
 public class Task {
-    @NonNull private String taskName;
+    private static int count = 0;
+    private final int ID = ++count;
+    private String taskName;
     private String description;
     private LocalDate deadline;
-    private TaskStatus status;
+    private TaskStatus status = TaskStatus.TODO;
 }
 
 
